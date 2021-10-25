@@ -1,11 +1,14 @@
 class CountVectorizer:
+    '''Делает терм-документную матрицу и опорные слова в тексте'''
     
     
     def __init__(self):
+        '''Конструктор'''
         pass
         
         
     def fit_transform(self, corpus) -> list:
+        '''Делает терм-документную матрицу в формате списка'''
         result = []
         corpus_lower = lower_words(corpus)
         unique_set = unique_words(corpus_lower)
@@ -18,6 +21,7 @@ class CountVectorizer:
         
     
     def get_feature_names(self, corpus) -> list:
+        '''Делает список опорных слов в тексте'''
         result = []
         corpus_lower = lower_words(corpus)
         result = unique_words(corpus_lower)
@@ -29,6 +33,7 @@ class CountVectorizer:
           
           
  def unique_words(datalist) -> list:
+    '''Делает список уникальных(без повторений) слов в тексте'''
     result = []
     words = []
     for elem in datalist:
@@ -38,6 +43,7 @@ class CountVectorizer:
     return result
     
 def lower_words(datalist) -> list:
+    '''Все слова строчными буквами'''
     result = []
     [result.append(x.lower()) for x in datalist]
     return result
