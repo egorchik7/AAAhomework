@@ -28,11 +28,11 @@ class CountVectorizer:
         return result
         
        
- corpus = ['Crock Pot Pasta Never boil pasta again','Pasta Pomodoro Fresh ingredients Parmesan to taste',
+corpus = ['Crock Pot Pasta Never boil pasta again','Pasta Pomodoro Fresh ingredients Parmesan to taste',
           'Pasta Boloneze parmesan cut again', 'Pasta Rizottotototo boil again']
           
           
- def unique_words(datalist) -> list:
+def unique_words(datalist) -> list:
     '''Делает список уникальных(без повторений) слов в тексте'''
     result = []
     words = []
@@ -47,10 +47,14 @@ def lower_words(datalist) -> list:
     result = []
     [result.append(x.lower()) for x in datalist]
     return result
-    
-vectorizer = CountVectorizer()
-count_matrix = vectorizer.fit_transform(corpus)
-feature_names = vectorizer.get_feature_names(corpus)
-print(feature_names)
-print(count_matrix)
+
+
+def main():
+    vectorizer = CountVectorizer()
+    count_matrix = vectorizer.fit_transform(corpus)
+    feature_names = vectorizer.get_feature_names(corpus)
+    print(feature_names)
+    print(count_matrix)
+if  __name__ == '__main__':
+    main()
     
