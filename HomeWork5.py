@@ -1,34 +1,33 @@
 import json
-
-corpus = """{
-    "title": "Вельш-корги",
-    "price": 1000,
-    "class": "dogs",
-    "location": {
-    "address": "сельское поселение Ельдигинское, поселок санатория Тишково, 25"
-    }
-    }"""
-
-dict_corp = json.loads(corpus)
+import keyword
 
 
 class ColorizeMixin:
-    repr_color_code = 32
+    repr_color_code = 33
 
     def __repr__(self):
-        return f'{self.title} | {self.price}'
-
-    # def __setattr__(self, key, value):
-    # self.__dict__[key] = value
+        return f'\033[1;{self.repr_color_code};40m' \
+               f' {self.title} | {self.price} ₽'
 
 
-class Advert:
+class Base:
+    def __repr__(self):
+        return f' {self.title} | {self.price} ₽'
 
-    def __init__(self, dictionary):
+
+class Advert(ColorizeMixin, Base):
+    """Основной класс,который динамически создает атрибуты экземпляра класса
+     из атрибутов JSON обьекта"""
+
+    def __init__(self, dictionary: dict):
         for key, value in dictionary.items():
-            if isinstance(value, dict):
+            if keyword.iskeyword(key):
+                if isinstance(value, dict):
+                    setattr(self, key + '_', Advert(value))
+                else:
+                    setattr(self, key + '_', value)
+            elif isinstance(value, dict):
                 setattr(self, key, Advert(value))
-
             else:
                 if key == 'price':
                     self._price = 0
@@ -36,21 +35,29 @@ class Advert:
                 else:
                     setattr(self, key, value)
 
-    #     def __repr__(self):
-    #         return f' {self.title} | {self.price}'
-
     @property
     def price(self):
-        print('Getting price as attr')
         return self._price
 
     @price.setter
-    def price(self, value):
-        print('setter')
+    def price(self, value: int):
+        """Проверка цены на неотрицательность"""
         if value < 0:
             raise ValueError('price must be >= 0')
         self._price = value
 
 
-A = Advert(dict_corp)
-print(A.price)
+if __name__ == '__main__':
+
+    dog = """{
+        "title": "Вельш-корги",
+        "price": 1000,
+        "class": "dogs",
+        "location": {
+        "address": "сельское поселение Ельдигинское, поселок санатория Тишково, 25"
+        }
+        }"""
+
+    dict_ad = json.loads(dog)
+    corgi = Advert(dict_ad)
+    print(corgi.class_)
