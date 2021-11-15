@@ -61,3 +61,4 @@ if __name__ == '__main__':
     dict_ad = json.loads(dog)
     corgi = Advert(dict_ad)
     print(corgi.class_)
+    print(corgi)
