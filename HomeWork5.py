@@ -37,7 +37,10 @@ class Advert(ColorizeMixin, Base):
 
     @property
     def price(self):
-        return self._price
+        if '_price' not in self.__dict__.keys():
+            return 0
+        else:
+            return self._price
 
     @price.setter
     def price(self, value: int):
@@ -51,8 +54,8 @@ if __name__ == '__main__':
 
     dog = """{
         "title": "Вельш-корги",
-        "price": 1000,
         "class": "dogs",
+        "price": 1000,
         "location": {
         "address": "сельское поселение Ельдигинское, поселок санатория Тишково, 25"
         }
@@ -60,5 +63,4 @@ if __name__ == '__main__':
 
     dict_ad = json.loads(dog)
     corgi = Advert(dict_ad)
-    print(corgi.class_)
-    print(corgi)
+    print(corgi.price)
