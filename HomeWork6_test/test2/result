@@ -1,0 +1,13 @@
+=============================================== test session starts ===============================================
+platform win32 -- Python 3.7.8, pytest-6.2.5, py-1.11.0, pluggy-1.0.0 -- C:\Users\gulba\PycharmProjects\pythonProjec
+t\venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\gulba\PycharmProjects\pythonProject
+collected 4 items                                                                                                  
+
+HomeWork6_2_test.py::test_decode[.--A] PASSED                                                                [ 25%]
+HomeWork6_2_test.py::test_decode[-...-B] PASSED                                                              [ 50%]
+HomeWork6_2_test.py::test_decode[-.-.-C] PASSED                                                              [ 75%]
+HomeWork6_2_test.py::test_decode[-- .- ..-MAI] PASSED                                                        [100%]
+
+================================================ 4 passed in 0.03s ================================================
