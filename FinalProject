@@ -1,0 +1,88 @@
+import click
+import numpy as np
+from functools import wraps
+
+
+def log(string_text: str):
+    def decorator(function):
+        @wraps(function)
+        def wrapper(*args, **kwargs):
+            print(string_text.format(np.random.randint(1, 60)))
+            return function(*args, **kwargs)
+        return wrapper
+    return decorator
+
+
+@click.group()
+def cli():
+    pass
+
+
+@cli.command()
+@click.option('--delivery', default=False, is_flag=True)
+@click.argument('pizza', nargs=1)
+def order(pizza: str, delivery: bool):
+    """Готовит и доставляет пиццу"""
+    print(f'Приготовили за {np.random.randint(1, 60)} c')
+    if delivery is True:
+        deliveryp(pizza)
+    else:
+        pickup(pizza)
+
+
+@cli.command()
+def menu():
+    """Выводит меню всего ресторана"""
+    pizzas = [Margharita(), Pepperoni(), Hawaiian()]
+    print('Меню:')
+    for pizza in pizzas:
+        print(pizza.dict())
+
+
+@log('Доставили за {} с')
+def deliveryp(pizza: str):
+    """Доставка пиццы"""
+    return
+
+
+@log('Забрали за {} c')
+def pickup(pizza: str):
+    """Самовывоз пиццы"""
+    return
+
+
+class Margharita:
+    """Пицца маргарита"""
+    recipe = {'Margharita': 'tomato_sauce mozzarella tomatoes'}
+
+    def __init__(self):
+        self.size = 'L'
+
+    def dict(self):
+        return self.recipe
+
+
+class Pepperoni:
+    """Пицца пепперони"""
+    recipe = {'Pepperoni': 'tomato_sauce mozzarella pepperoni'}
+
+    def __init__(self):
+        self.size = 'L'
+
+    def dict(self):
+        return self.recipe
+
+
+class Hawaiian:
+    """Гавайская пицца"""
+    recipe = {'Hawaiian': 'tomato_sauce mozzarella chicken pineapples'}
+
+    def __init__(self):
+        self.size = 'L'
+
+    def dict(self):
+        return self.recipe
+
+
+if __name__ == "__main__":
+    cli()
