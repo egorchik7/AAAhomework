@@ -1,0 +1,66 @@
+Country,Mobile,Basic,Standard,Premium,
+Argentina,,379,639,939,ARS
+Australia,,10.99,16.99,22.99,AUS
+Austria,,7.99,12.99,17.99,EUR
+Belgium,,8.99,13.49,17.99,EUR
+Bolivia,,7.99,10.99,13.99,USD
+Brazil,,25.9,39.9,55.9,BRL
+Bulgaria,,7.99,9.99,11.99,EUR
+Canada,,9.99,16.49,20.99,CAD
+Chile,,5940,8320,10700,CLP
+Colombia,,16900,26900,38900,COP
+Costa Rica,,8.99,12.99,15.99,USD
+Croatia,,7.99,9.99,11.99,EUR
+Czech Republic,,199,259,319,CZK
+Denmark,,79,99,129,DKK
+Ecuador,,7.99,10.99,13.99,USD
+Estonia,,7.99,9.99,11.99,EUR
+Finland,,7.99,11.99,15.99,EUR
+France,,8.99,13.49,17.99,EUR
+Germany,,7.99,12.99,17.99,EUR
+Gibraltar,,7.99,12.99,17.99,EUR
+Greece,,7.99,10.99,13.99,EUR
+Guatemala,,7.99,10.99,13.99,USD
+Honduras,,7.99,10.99,13.99,USD
+Hong Kong,,63,78,93,HKD
+Hungary,,2490,3490,4490,HUF
+Iceland,,7.99,12.99,17.99,EUR
+India,199,499,649,799,INR
+Indonesia,54000,120000,153000,186000,IDR
+Ireland,,7.99,12.99,17.99,EUR
+Israel,,32.9,54.9,69.9,ILS
+Italy,,7.99,12.99,17.99,EUR
+Japan,,990,1490,1980,JPY
+Latvia,,7.99,9.99,11.99,EUR
+Lietchenstein,,11.9,18.9,24.9,CHF
+Lithuania,,7.99,9.99,11.99,EUR
+Malaysia,17,35,45,55,MYR
+Mexico,,139,219,299,MXN
+Moldova,,7.99,9.99,11.99,EUR
+Monaco,,7.99,11.99,15.99,EUR
+Netherlands,,7.99,11.99,15.99,EUR
+New Zealand,,12.99,18.49,24.99,NZD
+Norway,,89,109,159,NOK
+Paraguay,,8.29,11.49,14.69,USD
+Peru,,24.9,34.9,44.9,PEN
+Philippines,149,369,459,549,PHP
+Poland,,29,43,60,PLN
+Portugal,,7.99,11.99,15.99,EUR
+Romania,,7.99,9.99,11.99,EUR
+Russia,,599,799,999,RUB
+San Marino,,7.99,12.99,17.99,EUR
+Singapore,,12.98,17.48,21.98,SGD
+Slovakia,,7.99,9.99,11.99,EUR
+South Africa,49,99,159,199,ZAR
+South Korea,,9500,13500,1700,KRW
+Spain,,7.99,12.99,17.99,EUR
+Sweden,,99,129,179,SEK
+Switzerland,,11.9,18.9,24.9,CHF
+Taiwan,,270,330,390,TWD
+Thailand,99,279,349,419,THB
+Turkey,,26.99,40.99,54.99,TRY
+Ukraine,,4.99,7.49,9.99,EUR
+United Kingdom,,5.99,9.99,13.99,GBP
+United States,,9.99,15.49,19.99,USD
+Uruguay,,8.99,12.99,15.99,USD
+Venezuela,,7.99,10.99,13.99,USD
